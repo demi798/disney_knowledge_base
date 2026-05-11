@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>迪士尼知识库问答</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="shell">
+    {% include 'nav_bar.html' %}
+    <header class="hero">
+      <div class="hero-inner">
+        <h1>迪士尼知识库问答</h1>
+        <p class="sub">门票攻略、游玩小贴士、活动海报都能问～RAG 检索知识库，可爱助手帮你整理好答案 ✨</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="ask-panel">
+        <label for="q">您的问题</label>
+        <textarea id="q" rows="3" placeholder="例如：一日票退款规则是什么？万圣节海报上写了什么？"></textarea>
+        <div class="row">
+          <button type="button" id="btn-send">提问</button>
+          <span id="status" class="status"></span>
+        </div>
+      </section>
+
+      <section class="answer-panel" id="answer-section" hidden>
+        <h2>回答</h2>
+        <div id="answer" class="answer-body"></div>
+
+        <h3 class="src-title">检索到的参考资料</h3>
+        <div id="sources" class="sources"></div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span>首次使用请先在同目录执行 <code>python build_index.py</code> 构建向量库</span>
+    </footer>
+  </div>
+
+  <script>
+    const btn = document.getElementById("btn-send");
+    const qEl = document.getElementById("q");
+    const answerSection = document.getElementById("answer-section");
+    const answerEl = document.getElementById("answer");
+    const sourcesEl = document.getElementById("sources");
+    const statusEl = document.getElementById("status");
+
+    function esc(s) {
+      const d = document.createElement("div");
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    async function ask() {
+      const question = qEl.value.trim();
+      if (!question) {
+        statusEl.textContent = "请输入问题";
+        return;
+      }
+      statusEl.textContent = "正在检索与生成…";
+      btn.disabled = true;
+      try {
+        const res = await fetch("/api/ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question }),
+        });
+        const data = await res.json();
+        if (!data.ok) {
+          statusEl.textContent = data.error || "请求失败";
+          return;
+        }
+        statusEl.textContent = "";
+        answerEl.innerHTML = esc(data.answer).replace(/\n/g, "<br/>");
+        sourcesEl.innerHTML = "";
+        (data.sources || []).forEach((s, i) => {
+          const card = document.createElement("div");
+          card.className = "source-card";
+          let imgHtml = "";
+          if (s.rel_image) {
+            const src = "/kb_images/" + encodeURI(s.rel_image);
+            imgHtml = `<div class="thumb"><img src="${src}" alt="" loading="lazy" /></div>`;
+          }
+          card.innerHTML =
+            imgHtml +
+            `<div class="meta"><span class="tag">${esc(s.type || "")}</span> ` +
+            `<strong>${esc(s.source || "")}</strong> ` +
+            `<span class="sim">相关度 ${s.similarity}</span></div>` +
+            `<p class="preview">${esc(s.preview || "")}</p>`;
+          sourcesEl.appendChild(card);
+        });
+        answerSection.hidden = false;
+      } catch (e) {
+        statusEl.textContent = "网络错误: " + e;
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    btn.addEventListener("click", ask);
+    qEl.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) ask();
+    });
+  </script>
+</body>
+</html>

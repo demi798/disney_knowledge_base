@@ -1,0 +1,12 @@
+{# 全局导航：问答首页 ↔ 知识库运营；当前页通过 request.endpoint 高亮 #}
+<nav class="site-nav" aria-label="主导航">
+  <a
+    href="{{ url_for('index') }}"
+    class="nav-link{% if request.endpoint == 'index' %} is-active{% endif %}"
+  >问答首页</a>
+  <span class="nav-sep" aria-hidden="true">·</span>
+  <a
+    href="{{ url_for('kb_ops') }}"
+    class="nav-link{% if request.endpoint == 'kb_ops' %} is-active{% endif %}"
+  >知识库运营</a>
+</nav>

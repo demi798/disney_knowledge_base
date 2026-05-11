@@ -1,0 +1,8 @@
+dashscope>=1.20.0
+faiss-cpu>=1.8.0
+numpy>=1.24.0
+# 必须安装本包名「python-docx」；若误装旧包「docx」会覆盖 docx 模块并导致 `from docx import Document` 报 exceptions 等错误，请执行: pip uninstall docx && pip install python-docx
+python-docx>=1.1.0
+openai>=1.40.0
+flask>=3.0.0
+python-dotenv>=1.0.0

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>知识库运营 · 迪士尼 RAG</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="shell shell-wide">
+    {% include 'nav_bar.html' %}
+    <header class="hero hero-compact">
+      <div class="hero-inner">
+        <h1>知识库运营</h1>
+        <p class="sub">问题生成、对话抽取、健康检查、版本快照与检索回归（调用 DashScope 会产生费用）</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <p class="ops-page-hint">
+        生成问题库后请在项目目录执行 <code>python3 build_index.py</code>（或 <code>python build_index.py</code>），再回到本页点击「重载索引缓存」。
+        <span class="ops-note">提示：<strong>count_items</strong> 是当前知识条目数；<strong>regression_exported</strong> 是全部条目衍生问题<strong>去重后</strong>的问句总数，通常远大于条目数，属正常现象。</span>
+      </p>
+
+      <div class="ops-grid">
+        <section class="ops-card">
+          <h4>1）多样化问题生成与检索增强</h4>
+          <p class="ops-desc">基于当前 <code>disney_metadata.json</code> 为每条知识生成问法，写入 <code>data/kb_generated_questions.json</code>，并导出回归问句集。</p>
+          <div class="ops-row">
+            <button type="button" class="btn-sec" id="btn-gen-q">生成问题库</button>
+            <button type="button" class="btn-sec" id="btn-export-reg">仅导出回归问句</button>
+            <button type="button" class="btn-sec" id="btn-reload-idx">重载索引缓存</button>
+          </div>
+          <pre class="mono-out" id="out-gen-q"></pre>
+        </section>
+
+        <section class="ops-card">
+          <h4>2）从对话中抽取知识点</h4>
+          <label for="dlg-text">粘贴用户与助手的对话（纯文本）</label>
+          <textarea id="dlg-text" rows="5" placeholder="用户：…&#10;助手：…"></textarea>
+          <div class="ops-row">
+            <button type="button" class="btn-sec" id="btn-extract">抽取并合并入库</button>
+            <button type="button" class="btn-sec" id="btn-load-dlg">查看已存知识点</button>
+          </div>
+          <pre class="mono-out" id="out-extract"></pre>
+        </section>
+
+        <section class="ops-card">
+          <h4>3）知识库健康度检查</h4>
+          <p class="ops-desc">结合时效、价格、政策、活动等维度做一致性巡检（LLM 研判）。</p>
+          <div class="ops-row">
+            <button type="button" class="btn-sec" id="btn-health">执行体检</button>
+            <button type="button" class="btn-sec" id="btn-health-last">读取上次报告</button>
+          </div>
+          <pre class="mono-out" id="out-health"></pre>
+        </section>
+
+        <section class="ops-card">
+          <h4>4）版本快照与检索回归</h4>
+          <div class="ops-row">
+            <input type="text" id="ver-label" placeholder="版本标签，如 v2026-01-a" class="ops-input" />
+            <button type="button" class="btn-sec" id="btn-snapshot">保存当前索引快照</button>
+          </div>
+          <div class="ops-row">
+            <button type="button" class="btn-sec" id="btn-list-ver">列出已存版本</button>
+          </div>
+          <div class="ops-row">
+            <input type="text" id="ver-reg" placeholder="与当前索引对比的版本标签" class="ops-input" />
+            <button type="button" class="btn-sec" id="btn-reg">当前 vs 该版本</button>
+          </div>
+          <div class="ops-row">
+            <input type="text" id="ver-a" placeholder="版本 A" class="ops-input sm" />
+            <input type="text" id="ver-b" placeholder="版本 B" class="ops-input sm" />
+            <button type="button" class="btn-sec" id="btn-reg-pair">两版本互比</button>
+          </div>
+          <pre class="mono-out" id="out-ver"></pre>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <span>首次使用请先在终端执行 <code>python3 build_index.py</code></span>
+    </footer>
+  </div>
+
+  <script>
+    function showJson(el, data) {
+      el.textContent = typeof data === "string" ? data : JSON.stringify(data, null, 2);
+    }
+
+    /** POST JSON，解析失败或非 JSON 时抛错；成功时在对象上附带 _httpStatus */
+    async function postJson(url, body) {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body || {}),
+      });
+      const text = await res.text();
+      let data;
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch (e) {
+        const err = new Error("服务器返回不是合法 JSON（HTTP " + res.status + "）");
+        err.rawSnippet = text ? text.slice(0, 400) : "";
+        throw err;
+      }
+      data._httpStatus = res.status;
+      return data;
+    }
+
+    function setMonoOutKind(el, kind) {
+      el.className =
+        "mono-out" +
+        (kind === "success" ? " mono-out--success" : kind === "error" ? " mono-out--error" : "");
+    }
+
+    document.getElementById("btn-gen-q").addEventListener("click", async () => {
+      const el = document.getElementById("out-gen-q");
+      setMonoOutKind(el, "neutral");
+      el.textContent = "生成中（可能较久）…";
+      try {
+        const data = await postJson("/api/kb/generate_questions", {});
+        if (data.ok && data._httpStatus === 200) {
+          setMonoOutKind(el, "success");
+          const head =
+            "【成功】问题库已写入，接口返回 ok: true。\n\n" +
+            "说明：count_items = 当前知识条目数；regression_exported = 所有条目生成的问题经过去重后的问句数量（通常远大于条目数）。\n\n";
+          el.textContent = head + JSON.stringify(data, null, 2);
+        } else {
+          setMonoOutKind(el, "error");
+          showJson(el, data);
+        }
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent =
+          (e.message || e) + (e.rawSnippet ? "\n\n--- 原始片段 ---\n" + e.rawSnippet : "");
+      }
+    });
+    document.getElementById("btn-export-reg").addEventListener("click", async () => {
+      const el = document.getElementById("out-gen-q");
+      setMonoOutKind(el, "neutral");
+      try {
+        const data = await postJson("/api/kb/export_regression", {});
+        if (data.ok && data._httpStatus === 200) {
+          setMonoOutKind(el, "success");
+          el.textContent =
+            "【成功】已导出回归问句。\n\n" + JSON.stringify(data, null, 2);
+        } else {
+          setMonoOutKind(el, "error");
+          showJson(el, data);
+        }
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent = (e.message || e) + (e.rawSnippet ? "\n\n" + e.rawSnippet : "");
+      }
+    });
+    document.getElementById("btn-reload-idx").addEventListener("click", async () => {
+      const el = document.getElementById("out-gen-q");
+      setMonoOutKind(el, "neutral");
+      try {
+        const data = await postJson("/api/kb/reload_cache", {});
+        if (data.ok && data._httpStatus === 200) {
+          setMonoOutKind(el, "success");
+          el.textContent = "【成功】索引缓存已清空，下次问答将重新从磁盘加载。\n\n" + JSON.stringify(data, null, 2);
+        } else {
+          setMonoOutKind(el, "error");
+          showJson(el, data);
+        }
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent = (e.message || e) + (e.rawSnippet ? "\n\n" + e.rawSnippet : "");
+      }
+    });
+
+    document.getElementById("btn-extract").addEventListener("click", async () => {
+      const el = document.getElementById("out-extract");
+      const text = document.getElementById("dlg-text").value.trim();
+      if (!text) {
+        setMonoOutKind(el, "error");
+        showJson(el, { ok: false, error: "请先粘贴对话" });
+        return;
+      }
+      setMonoOutKind(el, "neutral");
+      el.textContent = "抽取中…";
+      try {
+        const data = await postJson("/api/kb/extract_dialogue", { text });
+        setMonoOutKind(el, data.ok ? "success" : "error");
+        showJson(el, data);
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent = (e.message || e) + (e.rawSnippet ? "\n\n" + e.rawSnippet : "");
+      }
+    });
+    document.getElementById("btn-load-dlg").addEventListener("click", async () => {
+      const el = document.getElementById("out-extract");
+      try {
+        const res = await fetch("/api/kb/dialogue_knowledge");
+        const text = await res.text();
+        const data = text ? JSON.parse(text) : {};
+        setMonoOutKind(el, data.ok ? "success" : "error");
+        showJson(el, data);
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent = String(e.message || e);
+      }
+    });
+
+    document.getElementById("btn-health").addEventListener("click", async () => {
+      const el = document.getElementById("out-health");
+      setMonoOutKind(el, "neutral");
+      el.textContent = "体检中（可能较久）…";
+      try {
+        const data = await postJson("/api/kb/health_check", {});
+        setMonoOutKind(el, data.ok ? "success" : "error");
+        showJson(el, data);
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent = (e.message || e) + (e.rawSnippet ? "\n\n" + e.rawSnippet : "");
+      }
+    });
+    document.getElementById("btn-health-last").addEventListener("click", async () => {
+      const el = document.getElementById("out-health");
+      try {
+        const res = await fetch("/api/kb/health_report");
+        const text = await res.text();
+        const data = text ? JSON.parse(text) : {};
+        setMonoOutKind(el, data.ok ? "success" : "error");
+        showJson(el, data);
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent = String(e.message || e);
+      }
+    });
+
+    document.getElementById("btn-snapshot").addEventListener("click", async () => {
+      const el = document.getElementById("out-ver");
+      const label = document.getElementById("ver-label").value.trim();
+      if (!label) {
+        setMonoOutKind(el, "error");
+        showJson(el, { ok: false, error: "请填写版本标签" });
+        return;
+      }
+      try {
+        const data = await postJson("/api/kb/version/snapshot", { label, note: "" });
+        setMonoOutKind(el, data.ok ? "success" : "error");
+        showJson(el, data);
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent = (e.message || e) + (e.rawSnippet ? "\n\n" + e.rawSnippet : "");
+      }
+    });
+    document.getElementById("btn-list-ver").addEventListener("click", async () => {
+      const el = document.getElementById("out-ver");
+      try {
+        const res = await fetch("/api/kb/versions");
+        const text = await res.text();
+        const data = text ? JSON.parse(text) : {};
+        setMonoOutKind(el, data.ok ? "success" : "error");
+        showJson(el, data);
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent = String(e.message || e);
+      }
+    });
+    document.getElementById("btn-reg").addEventListener("click", async () => {
+      const el = document.getElementById("out-ver");
+      const version_label = document.getElementById("ver-reg").value.trim();
+      if (!version_label) {
+        setMonoOutKind(el, "error");
+        showJson(el, { ok: false, error: "请填写要比对的版本标签" });
+        return;
+      }
+      setMonoOutKind(el, "neutral");
+      el.textContent = "回归检索中…";
+      try {
+        const data = await postJson("/api/kb/version/regression", { version_label, top_k: 5 });
+        setMonoOutKind(el, data.ok ? "success" : "error");
+        showJson(el, data);
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent = (e.message || e) + (e.rawSnippet ? "\n\n" + e.rawSnippet : "");
+      }
+    });
+    document.getElementById("btn-reg-pair").addEventListener("click", async () => {
+      const el = document.getElementById("out-ver");
+      const label_a = document.getElementById("ver-a").value.trim();
+      const label_b = document.getElementById("ver-b").value.trim();
+      if (!label_a || !label_b) {
+        setMonoOutKind(el, "error");
+        showJson(el, { ok: false, error: "请填写版本 A 与 B" });
+        return;
+      }
+      setMonoOutKind(el, "neutral");
+      el.textContent = "回归检索中…";
+      try {
+        const data = await postJson("/api/kb/version/regression_pair", {
+          label_a,
+          label_b,
+          top_k: 5,
+        });
+        setMonoOutKind(el, data.ok ? "success" : "error");
+        showJson(el, data);
+      } catch (e) {
+        setMonoOutKind(el, "error");
+        el.textContent = (e.message || e) + (e.rawSnippet ? "\n\n" + e.rawSnippet : "");
+      }
+    });
+  </script>
+</body>
+</html>

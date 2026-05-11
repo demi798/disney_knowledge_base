@@ -1,0 +1,457 @@
+/* 迪士尼知识库问答 — 浅色调、活泼可爱风格 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "SF Pro SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  /* 柔和马卡龙渐变背景 */
+  background:
+    radial-gradient(ellipse 120% 80% at 10% 10%, rgba(255, 214, 230, 0.75) 0%, transparent 45%),
+    radial-gradient(ellipse 90% 70% at 90% 15%, rgba(186, 236, 255, 0.65) 0%, transparent 42%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255, 243, 196, 0.55) 0%, transparent 50%),
+    linear-gradient(180deg, #fff9fb 0%, #f5fbff 45%, #fffef8 100%);
+  min-height: 100vh;
+  color: #3d3548;
+}
+
+.shell {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.shell-wide {
+  max-width: 980px;
+}
+
+/* 顶部导航：两页快速切换 */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+  margin-bottom: 1.35rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid rgba(252, 231, 243, 0.98);
+  box-shadow:
+    0 3px 16px rgba(255, 143, 171, 0.1),
+    0 2px 10px rgba(125, 211, 252, 0.08);
+}
+
+.site-nav .nav-link {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #7c6fa3;
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.site-nav .nav-link:hover {
+  color: #5b4d7a;
+  background: rgba(252, 231, 243, 0.65);
+}
+
+.site-nav .nav-link.is-active {
+  color: #fff;
+  background: linear-gradient(135deg, #ff8fab 0%, #c4b5fd 100%);
+  box-shadow: 0 2px 10px rgba(196, 181, 253, 0.45);
+}
+
+.site-nav .nav-sep {
+  color: #d4cce8;
+  font-weight: 700;
+  user-select: none;
+}
+
+.hero-compact {
+  padding: 1.35rem 1.35rem 1.5rem;
+}
+
+.ops-page-hint {
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 251, 254, 0.95);
+  border: 2px solid rgba(252, 231, 243, 0.95);
+  font-size: 0.88rem;
+  color: #6b6280;
+  line-height: 1.55;
+}
+
+/* 顶部标题区：云朵卡片感 */
+.hero {
+  position: relative;
+  background: #ffffff;
+  border-radius: 1.75rem;
+  padding: 1.75rem 1.5rem 2rem;
+  text-align: center;
+  box-shadow:
+    0 4px 24px rgba(255, 105, 165, 0.12),
+    0 8px 40px rgba(120, 200, 255, 0.08);
+  border: 3px solid #fff;
+  outline: 2px dashed rgba(255, 182, 218, 0.65);
+  outline-offset: 4px;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  margin: 0 0 0.65rem;
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  background: linear-gradient(120deg, #ff6b9d 0%, #ffc857 35%, #7dd3fc 70%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.sub {
+  margin: 0;
+  color: #7b6f8a;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.main {
+  margin-top: 1.75rem;
+}
+
+/* 提问区：糖果色边框卡片 */
+.ask-panel {
+  background: #ffffff;
+  border-radius: 1.35rem;
+  padding: 1.35rem 1.4rem 1.5rem;
+  border: 2px solid rgba(255, 182, 218, 0.55);
+  box-shadow: 0 6px 28px rgba(125, 211, 252, 0.15);
+}
+
+.ask-panel label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: #e85d8c;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.ask-panel label::before {
+  content: "✨ ";
+}
+
+#q {
+  width: 100%;
+  padding: 0.9rem 1.05rem;
+  border-radius: 1rem;
+  border: 2px solid #ffe0ef;
+  background: linear-gradient(180deg, #fffdfc 0%, #fff8fc 100%);
+  color: #3d3548;
+  font-size: 1rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#q::placeholder {
+  color: #b8aed0;
+}
+
+#q:focus {
+  border-color: #7dd3fc;
+  box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.28);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.9rem;
+  flex-wrap: wrap;
+}
+
+/* 主按钮：俏皮渐变 + 悬停微动效 */
+#btn-send {
+  padding: 0.65rem 1.65rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff8fab 0%, #ffb574 45%, #ffd56f 100%);
+  color: #fff;
+  font-size: 1.02rem;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 14px rgba(255, 143, 171, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#btn-send:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(255, 143, 171, 0.55);
+}
+
+#btn-send:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+#btn-send:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.status {
+  font-size: 0.92rem;
+  color: #9b8fc9;
+  font-weight: 500;
+}
+
+/* 回答区 */
+.answer-panel {
+  margin-top: 1.75rem;
+  padding: 1.4rem 1.45rem 1.5rem;
+  border-radius: 1.35rem;
+  background: linear-gradient(165deg, #ffffff 0%, #fffbf7 50%, #f8fdff 100%);
+  border: 2px solid rgba(186, 236, 255, 0.7);
+  box-shadow: 0 8px 32px rgba(125, 211, 252, 0.12);
+}
+
+.answer-panel h2 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  color: #5b9bd5;
+  font-weight: 800;
+}
+
+.answer-panel h2::before {
+  content: "🎀 ";
+}
+
+.answer-body {
+  line-height: 1.75;
+  color: #423a52;
+}
+
+.src-title {
+  margin: 1.55rem 0 0.85rem;
+  font-size: 1rem;
+  color: #c978a8;
+  font-weight: 700;
+}
+
+.src-title::before {
+  content: "📚 ";
+}
+
+.sources {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.source-card {
+  padding: 1rem 1.05rem;
+  border-radius: 1rem;
+  background: #fff;
+  border: 2px solid #fce7f3;
+  box-shadow: 0 3px 14px rgba(252, 231, 243, 0.85);
+  transition: border-color 0.2s ease;
+}
+
+.source-card:hover {
+  border-color: #fbcfe8;
+}
+
+.source-card .thumb {
+  margin-bottom: 0.65rem;
+}
+
+.source-card .thumb img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 0.75rem;
+  object-fit: contain;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.meta {
+  font-size: 0.88rem;
+  margin-bottom: 0.4rem;
+  color: #524966;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #dbeafe 0%, #fce7f3 100%);
+  font-size: 0.74rem;
+  margin-right: 0.4rem;
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.sim {
+  color: #a78bfa;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.preview {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #6b6280;
+  line-height: 1.55;
+}
+
+.foot {
+  margin-top: 2.75rem;
+  text-align: center;
+  font-size: 0.84rem;
+  color: #9d92b0;
+}
+
+.foot code {
+  background: linear-gradient(180deg, #fff5f8 0%, #eff6ff 100%);
+  padding: 0.2rem 0.45rem;
+  border-radius: 8px;
+  border: 1px solid #fce7f3;
+  color: #7c6fa3;
+  font-size: 0.81rem;
+}
+
+.ops-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .ops-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ops-card {
+  background: linear-gradient(165deg, #fffbfe 0%, #f8fcff 100%);
+  border-radius: 1rem;
+  border: 2px solid rgba(252, 231, 243, 0.95);
+  padding: 1rem 1.05rem 1.1rem;
+}
+
+.ops-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.98rem;
+  color: #c978a8;
+}
+
+.ops-desc {
+  margin: 0 0 0.65rem;
+  font-size: 0.82rem;
+  color: #7b6f8a;
+  line-height: 1.45;
+}
+
+.ops-card label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.84rem;
+  color: #6366f1;
+  font-weight: 600;
+}
+
+.ops-card textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.85rem;
+  border: 2px solid #e9e3ff;
+  font-size: 0.88rem;
+  resize: vertical;
+  margin-bottom: 0.55rem;
+}
+
+.ops-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+
+.btn-sec {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #e9e3ff 0%, #dbeafe 100%);
+  color: #4f46e5;
+  box-shadow: 0 2px 10px rgba(129, 140, 248, 0.25);
+}
+
+.btn-sec:hover {
+  filter: brightness(1.03);
+}
+
+.ops-input {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.45rem 0.65rem;
+  border-radius: 999px;
+  border: 2px solid #ede9fe;
+  font-size: 0.86rem;
+}
+
+.ops-input.sm {
+  flex: none;
+  width: 120px;
+  min-width: 80px;
+}
+
+.mono-out {
+  margin: 0.55rem 0 0;
+  padding: 0.65rem 0.75rem;
+  max-height: 280px;
+  overflow: auto;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  background: #2d2640;
+  color: #f5f3ff;
+  border-radius: 0.65rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border: 2px solid transparent;
+}
+
+/* 成功：绿色系，避免被误认为「终端报错」 */
+.mono-out--success {
+  background: linear-gradient(165deg, #ecfdf5 0%, #f0fdf4 40%, #eefbfd 100%);
+  color: #14532d;
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+/* 失败：红边框提示 */
+.mono-out--error {
+  background: #fff1f2;
+  color: #9f1239;
+  border-color: rgba(244, 63, 94, 0.45);
+}
+
+.ops-page-hint .ops-note {
+  display: block;
+  margin-top: 0.55rem;
+  font-size: 0.84rem;
+  color: #6b6280;
+}

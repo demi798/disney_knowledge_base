@@ -1,0 +1,909 @@
+{
+  "generated_at": "2026-05-10T10:30:53.507944+00:00",
+  "count_items": 11,
+  "items": [
+    {
+      "chunk_id": 0,
+      "source": "1-上海迪士尼门票规则.docx",
+      "type": "text",
+      "questions": [
+        {
+          "question": "上海迪士尼乐园的一日票价格是如何根据季节变化的？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "一日票价格根据季节浮动，平日成人票475元起，高峰日659元起，特别高峰日799元起。"
+        },
+        {
+          "question": "如果我想连续游玩两天，买两日票和买两张单日票哪个更划算？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "购买两日票比单独购买两天单日票优惠约9折，因此更划算。"
+        },
+        {
+          "question": "哪些平台可以购买上海迪士尼门票？有没有官方认证的标识需要留意？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "可通过上海迪士尼官网、官方App、微信公众号及小程序购买；第三方平台如飞猪、携程等合作代理商也可购票，需认准官方授权标识。"
+        },
+        {
+          "question": "假如我计划在节庆期间入园，应该选择哪种门票类型？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "应选择特定日票，因其包含部分节庆活动时段，且需注意门票标注的有效期限。"
+        },
+        {
+          "question": "一位外籍游客如何完成上海迪士尼门票的实名绑定？",
+          "question_type": "间接问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "外籍游客需使用护照作为身份证件进行电子票绑定。"
+        },
+        {
+          "question": "如果我在距离入园48小时内因突发疾病无法前往，是否还能退票或改期？",
+          "question_type": "假设问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "距入园日48小时内不可退改，但若提供二甲以上医院证明，可申请特殊情况处理。"
+        },
+        {
+          "question": "未使用的上海迪士尼门票过期后还能延期吗？需要支付什么费用？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "未使用门票过期后30天内可申请补差价延期，需支付原票价20%的手续费。"
+        },
+        {
+          "question": "1.4米以下的儿童是否都能免票？需要提供什么证明材料？",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "不是所有1.4米以下儿童都免票，仅3周岁以下或身高未达标者可免票，需现场测量身高或出示年龄证明。"
+        },
+        {
+          "question": "残障人士在上海迪士尼入园时能享受什么优惠？需要携带什么证件？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "残障人士可享7.5折优惠，需出示有效残障证明原件。"
+        },
+        {
+          "question": "上海迪士尼年卡有哪些种类？它们的价格区间是什么？",
+          "question_type": "直接问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "年卡分为宝石卡、珍珠卡、翡翠卡三种，价格从……（知识内容不完整，无法准确回答）"
+        }
+      ]
+    },
+    {
+      "chunk_id": 1,
+      "source": "1-上海迪士尼门票规则.docx",
+      "type": "text",
+      "questions": [
+        {
+          "question": "如果我买了年卡，能否在激活后转让给朋友？",
+          "question_type": "条件问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "可以，但需支付卡面价格30%的手续费。"
+        },
+        {
+          "question": "年卡用户是否能享受餐饮折扣？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "是的，年卡用户可享商品和餐饮折扣。"
+        },
+        {
+          "question": "早享卡和尊享卡有什么区别？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "早享卡可提前1小时入园，每日限量且需提前7天抢购；尊享卡提供指定项目快速通道，分3项、6项、8项套装，价格从440元至1280元不等。"
+        },
+        {
+          "question": "如果我在购买门票后35天内发现价格下调，还能申请补差价吗？",
+          "question_type": "假设问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "不能，补差价延期仅限后30天内申请。"
+        },
+        {
+          "question": "持有结婚证的人可以在半年内购买什么特别套票？",
+          "question_type": "间接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "可购买含皇家宴会厅双人餐的特别套票。"
+        },
+        {
+          "question": "军人优惠需要满足哪些条件才能享受8折？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "现役及退役军人需凭证件，并至少提前3天登记审批。"
+        },
+        {
+          "question": "学生票在寒暑假期间是否开放？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "不开放。"
+        },
+        {
+          "question": "如果我想带孩子去玩，租一辆童车要多少钱一天？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "90元/天。"
+        },
+        {
+          "question": "年卡激活时必须本人到场吗？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "是的，需本人持证件办理。"
+        },
+        {
+          "question": "如果我买的是翡翠卡，需要支付多少费用？",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "翡翠卡价格为4399元。"
+        },
+        {
+          "question": "礼宾服务的经典套装和豪华套装分别多少钱起？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "经典套装2100元起，豪华套装3100元起。"
+        },
+        {
+          "question": "团队票若提前30天预订，能享受几折优惠？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "享8折优惠。"
+        }
+      ]
+    },
+    {
+      "chunk_id": 2,
+      "source": "1-上海迪士尼门票规则.docx",
+      "type": "text",
+      "questions": [
+        {
+          "question": "储物柜租赁费用是多少？有免费时段吗？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "小型储物柜60元/天，大型80元/天；年卡用户享前两小时免费。"
+        },
+        {
+          "question": "如果我带了自拍杆去园区，会被允许通过安检吗？",
+          "question_type": "间接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "不可以，自拍杆属于禁止携带物品，不得带入园区。"
+        },
+        {
+          "question": "与童车租赁相比，轮椅租赁每天贵多少？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "童车租赁90元/天，轮椅租赁40元/天，因此童车比轮椅贵50元/天。"
+        },
+        {
+          "question": "假如我在非工作时间需要票务咨询，应该怎么办？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "非工作时间可发送邮件处理票务咨询。"
+        },
+        {
+          "question": "如果我在离园后发现票务问题，还能投诉吗？",
+          "question_type": "假设问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "可以投诉，但需提供完整的入园记录作为凭证。"
+        },
+        {
+          "question": "在万圣节夜场期间购票，票价会有什么变化？",
+          "question_type": "推理问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "季节性活动期间票价可能上浮，万圣节夜场票需单独购买。"
+        },
+        {
+          "question": "员工折扣票可以转赠给朋友使用吗？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "不可以，员工折扣票仅限在职员工直系亲属使用，且需提前报备个人信息。"
+        },
+        {
+          "question": "如果我遗失了年卡，需要多久才能重新启用？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "年卡遗失冻结需时48小时。"
+        },
+        {
+          "question": "雨天运营时，如何申请补偿？",
+          "question_type": "直接问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "可凭票根在官网申请雨天补偿券。"
+        },
+        {
+          "question": "为什么建议避开周一和节假日入园？",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "因为周一和节假日人流较多，建议提前规划以避开高峰。"
+        },
+        {
+          "question": "存包服务是否对所有行李都适用？大件行李该去哪里寄存？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "存包服务按件收费，每件60元起；大件行李需寄存至迪士尼地铁站。"
+        },
+        {
+          "question": "如果我在二手平台购买门票，可能会遇到什么风险？",
+          "question_type": "假设问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "可能存在票务诈骗风险，需注意识别票面二维码真伪。"
+        }
+      ]
+    },
+    {
+      "chunk_id": 3,
+      "source": "2-迪士尼老人票价规定.docx",
+      "type": "text",
+      "questions": [
+        {
+          "question": "上海迪士尼乐园对65岁以上老人的票价优惠是多少？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "上海迪士尼老人票平日价为标准票价的75%，特定高峰日约为标准票的85%。"
+        },
+        {
+          "question": "如果我今年68岁，去香港迪士尼能享受什么票价优惠？",
+          "question_type": "条件问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "香港迪士尼老人票统一按标准票价的50%计算。"
+        },
+        {
+          "question": "东京和巴黎迪士尼有没有专门针对老年人的票价优惠？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "东京迪士尼暂未设置专门老人票，巴黎迪士尼对60岁以上游客在特定日期提供折扣。"
+        },
+        {
+          "question": "除了票价优惠，65岁以上的游客还能享受哪些特殊权益？",
+          "question_type": "间接问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "包括生日当天获赠纪念徽章、部分园区餐饮店提供老人专属套餐折扣，以及轮椅租赁服务享受优先通道。"
+        },
+        {
+          "question": "假如我在线上购票时填写的年龄信息有误，会有什么后果？",
+          "question_type": "假设问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "可能导致无法享受老人票优惠，需在入园时补交有效证件或重新购票。"
+        },
+        {
+          "question": "港澳台游客如何证明自己符合老人票资格？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "可使用当地老年证或护照，若为外文证件，需配合翻译公证件。"
+        },
+        {
+          "question": "为什么有些老人在入园时被要求签署承诺书？",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "因为证件信息模糊，无法确认年龄或身份，需通过签署承诺书并补交证明材料以完成核验。"
+        },
+        {
+          "question": "上海迪士尼的老人票价格在高峰日和平时有何不同？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "平日价为标准票价的75%，高峰日约为标准票的85%。"
+        },
+        {
+          "question": "每年1月迪士尼是否会调整老人票价格？如果调，幅度有多大？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "是的，每年1月会根据物价指数进行微调，调幅通常不超过5%。"
+        },
+        {
+          "question": "一位65岁的老人最多可以带几名陪同者走快速通道？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "每位老人最多可携带两名陪同者走快速通道。"
+        },
+        {
+          "question": "如果我持有法国护照且年满60岁，去巴黎迪士尼能否享受折扣？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "可以，巴黎迪士尼对60岁以上游客在特定日期提供折扣。"
+        },
+        {
+          "question": "为何必须确保身份证件上的生日信息清晰可辨？",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "因为证件生日信息必须清晰可辨，以确保年龄符合老人票资格，避免核验失败。"
+        }
+      ]
+    },
+    {
+      "chunk_id": 4,
+      "source": "2-迪士尼老人票价规定.docx",
+      "type": "text",
+      "questions": [
+        {
+          "question": "上海迪士尼为老年游客提供了哪些特殊便利措施？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "上海迪士尼在飞跃地平线、加勒比海盗等热门项目设置老人专用排队通道，平均等待时间缩短40%；园内代步车租赁实行老人优先政策，上午10点前可预订当日车辆；65岁以上游客可免费寄存行李两小时，超时部分按半价计费。"
+        },
+        {
+          "question": "如果我在台风天气导致闭园后想改期，还能用原门票吗？",
+          "question_type": "条件问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "可以，凭票可在30天内改期。"
+        },
+        {
+          "question": "为什么建议老年游客选择周二至周四上午10点前入园？",
+          "question_type": "推理问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "因为这能避开周末及节假日的人流高峰，且上午10点前可预订园内代步车，提升游览体验。"
+        },
+        {
+          "question": "与上海迪士尼相比，香港迪士尼对老年游客的特别服务有何不同？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "香港迪士尼在小小世界、森林河流之旅等温和项目提供座椅加热服务，而上海迪士尼则设有老人专用排队通道和代步车优先预订政策。"
+        },
+        {
+          "question": "若我因突发心脏病需要退票，是否必须提供医院证明？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "是的，医疗原因退票需提供三甲医院诊断证明。"
+        },
+        {
+          "question": "假设我计划在春节假期带父母去迪士尼，他们该如何预约老人票？",
+          "question_type": "假设问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "重大节庆期间（如春节）老人票需提前3天预约，限量发售，建议尽早通过官方渠道完成预约。"
+        },
+        {
+          "question": "东京迪士尼海洋馆为老年游客提供什么语言支持服务？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "提供中英日三语讲解器免费租借服务。"
+        },
+        {
+          "question": "如果我在距离入园48小时内才发现无法前往，还能退票吗？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "不能，根据规则，48小时内不退不改。"
+        },
+        {
+          "question": "票价每年会调整吗？调整幅度一般有多大？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "是的，每年1月会根据物价指数进行微调，调幅通常不超过5%。"
+        },
+        {
+          "question": "老年人在园区内如何获取应急药物？",
+          "question_type": "间接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "各园区医疗点均配备老年常见病急救药品，可免费领取速效救心丸等应急药物。"
+        },
+        {
+          "question": "如果我68岁，想寄存行李超过两小时，要付多少钱？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "超时部分按半价计费，具体金额取决于原价，但收费标准为半价。"
+        },
+        {
+          "question": "为什么说穿着舒适运动鞋对老年游客很重要？",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "因为园区步行距离较长，舒适运动鞋有助于减少脚部疲劳和受伤风险，提升整体游览体验。"
+        }
+      ]
+    },
+    {
+      "chunk_id": 5,
+      "source": "3-迪士尼乐园游玩攻略清单.docx",
+      "type": "text",
+      "questions": [
+        {
+          "question": "如何获取迪士尼乐园的门票？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "可以通过官方销售点购买迪士尼乐园的门票。"
+        },
+        {
+          "question": "如果我想在节假日去迪士尼乐园，应该提前做什么准备？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "建议提前预定酒店，以确保有合适的住宿。"
+        },
+        {
+          "question": "为什么建议游客携带舒适的鞋子去迪士尼乐园？",
+          "question_type": "推理问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "因为需要大量步行，舒适鞋子有助于减轻疲劳，提升游玩体验。"
+        },
+        {
+          "question": "与乘坐出租车相比，地铁和巴士前往迪士尼乐园有哪些优势？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "地铁、巴士等公共交通方式可能更经济且避开交通拥堵，但具体优势需结合实际情况判断。"
+        },
+        {
+          "question": "假如我计划在迪士尼乐园内拍摄纪念照片，应该准备什么？",
+          "question_type": "假设问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "应携带相机或手机以便拍摄纪念照片。"
+        },
+        {
+          "question": "为了减少排队时间，有什么推荐的策略吗？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "建议购买快速通行证（FastPass）以减少排队等待时间。"
+        },
+        {
+          "question": "如果我在迪士尼乐园游玩时感到口渴，应该怎么做？",
+          "question_type": "条件问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "应保持适当的饮水，以防脱水。"
+        },
+        {
+          "question": "为什么说提前查看地图对游玩体验很重要？",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "因为提前规划路线可以最大程度地体验各个景点，避免重复走动或错过重要项目。"
+        },
+        {
+          "question": "哪些游客不适合参与某些景点？",
+          "question_type": "间接问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "应了解每个景点的适宜年龄范围，确保适合自身或同行者。"
+        },
+        {
+          "question": "如果我想在迪士尼乐园享受特色美食，应该注意什么？",
+          "question_type": "条件问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "建议尝试乐园内的特色小吃和正餐。"
+        },
+        {
+          "question": "除了下载官方APP外，还有哪些方式可以获取实时游园信息？",
+          "question_type": "对比问",
+          "difficulty": "困难",
+          "is_answerable": false,
+          "answer": "知识内容未提及其他获取实时信息的方式。"
+        },
+        {
+          "question": "在迪士尼乐园里，如何防止贵重物品丢失？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "应注意保管好个人物品，尤其是贵重物品如包包、相机等。"
+        }
+      ]
+    },
+    {
+      "chunk_id": 6,
+      "source": "3-迪士尼乐园游玩攻略清单.docx",
+      "type": "text",
+      "questions": [
+        {
+          "question": "在迪士尼乐园游玩时，为什么建议提前购买纪念品？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "为了避免在临近关闭时间时排队，节省时间并确保能买到想要的纪念品。"
+        },
+        {
+          "question": "如果我在迪士尼乐园发现自己的相机不见了，应该怎么办？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "应立即联系乐园内的工作人员寻求帮助，同时注意保管好个人物品，尤其是贵重物品。"
+        },
+        {
+          "question": "为什么说了解景点的适宜年龄范围很重要？",
+          "question_type": "推理问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "因为不同景点适合的年龄段不同，了解后可确保游玩方式符合自己或家人的兴趣与安全需求。"
+        },
+        {
+          "question": "假如我带年幼的孩子去迪士尼，有哪些注意事项需要特别关注？",
+          "question_type": "假设问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "需注意景点的适宜年龄范围，确保孩子能安全参与；同时要妥善保管孩子的随身物品，并遵守乐园规则。"
+        },
+        {
+          "question": "在迪士尼乐园里，如果遇到紧急情况，最合适的应对方式是什么？",
+          "question_type": "间接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "可以寻求乐园内工作人员的帮助，他们能提供及时有效的支持。"
+        },
+        {
+          "question": "相比在闭园前购买纪念品，提前购买有什么优势？",
+          "question_type": "对比问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "提前购买可以避免闭园前的排队高峰，节省时间，提高购物效率，且更有可能买到心仪的商品。"
+        },
+        {
+          "question": "为什么说遵守迪士尼乐园的规则对他人也是一种尊重？",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "因为规则旨在保障所有游客的安全和体验，遵守规则有助于维护秩序，体现对他人的体贴与尊重。"
+        },
+        {
+          "question": "如果我打算和家人一起在迪士尼度过一天，最核心的建议是什么？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "最重要的是尽情享受迪士尼乐园的快乐氛围，与家人和朋友一起创造美好回忆。"
+        }
+      ]
+    },
+    {
+      "chunk_id": 7,
+      "source": "4-上海迪士尼乐园酒店会员制度.docx",
+      "type": "text",
+      "questions": [
+        {
+          "question": "上海迪士尼乐园的尊享卡可以在入园后什么时候购买？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "尊享卡需要在入园后通过上海迪士尼度假区App绑定门票后才能购买。"
+        },
+        {
+          "question": "如果我晚些入园，还能买到尊享卡吗？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "可能买不到，因为尊享卡限量出售，售罄即止，尤其在客流大的日子或热门项目（如飞跃地平线、小矮人矿山车）更易售罄。"
+        },
+        {
+          "question": "尊享卡和普通排队通道有什么区别？",
+          "question_type": "对比问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "尊享卡提供单独的快速通道，通常位于普通免费排队通道旁边，可缩短等待时间。"
+        },
+        {
+          "question": "为什么尊享卡在高峰期价格会涨到180元？",
+          "question_type": "推理问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "因为客流量大时，尊享卡限量供应以控制快速通道的排队时长，价格随供需关系波动，因此会出现180元等高价。"
+        },
+        {
+          "question": "我可以为同一个项目多次购买尊享卡吗？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "可以，特别喜欢某个小项目的游客可以多次购买同一项目的尊享卡，实现多次进入体验。"
+        },
+        {
+          "question": "礼宾服务包含哪些内容？它和尊享卡有何不同？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "礼宾服务是尊享卡的超值套餐，包含提前购买尊享卡、迪士尼小镇入口入园、花车巡游预留位置和烟花表演预留位置；而尊享卡仅提供快速通道服务。"
+        },
+        {
+          "question": "如果我想在淡季带孩子连刷五次飞跃地平线，是否可行？",
+          "question_type": "假设问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "可行，根据知识内容，淡季时曾有人一天内连续购买五次飞跃地平线的尊享卡，且需大人陪同。"
+        },
+        {
+          "question": "礼宾服务最早可以在入园前多少天购买？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "最早可提前7天购买。"
+        },
+        {
+          "question": "尊享卡的价格是固定的吗？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "不是固定的，价格每天会有波动，受客流量影响，从80元到180元不等。"
+        },
+        {
+          "question": "为什么官方要限制尊享卡的销售数量？",
+          "question_type": "推理问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "为了控制快速通道的排队时长，避免因大量使用导致通道拥堵，确保服务体验。"
+        },
+        {
+          "question": "礼宾服务在哪里可以购买？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "可在上海迪士尼度假区官方App和微信公众号购买。"
+        },
+        {
+          "question": "小孩子玩飞跃地平线需要大人陪同吗？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "是的，购买尊享卡的小孩必须有一个大人陪同。"
+        }
+      ]
+    },
+    {
+      "chunk_id": 8,
+      "source": "4-上海迪士尼乐园酒店会员制度.docx",
+      "type": "text",
+      "questions": [
+        {
+          "question": "在10月31日，购买含8大项目的尊享卡礼宾服务需要多少钱一位？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "1280元一位"
+        },
+        {
+          "question": "为什么说礼宾服务能节省大量排队时间？",
+          "question_type": "推理问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "因为礼宾服务可从迪士尼小镇入口免排队入园，并且享有花车巡游和烟花预留位置，避免了在大门口排队或提前两小时占位的麻烦。"
+        },
+        {
+          "question": "如果我想观看晚上的点亮奇梦光影秀并避开人群，应该选择哪种服务？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "应选择包含烟花预留位置的礼宾服务，该服务提供城堡前方的专属观赏区域，无需提前两小时占位。"
+        },
+        {
+          "question": "与普通门票相比，购买礼宾服务的尊享卡在哪些方面有优势？",
+          "question_type": "对比问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "礼宾服务提供免排队入园（从迪士尼小镇入口）、花车巡游和烟花秀的预留座位，节省大量步行和等待时间，提升游玩效率。"
+        },
+        {
+          "question": "假设我计划在10月31日前往上海迪士尼，最迟什么时候可以购买礼宾服务？",
+          "question_type": "假设问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "最早可提前7天购买，因此在10月31日当天仍可购买，但需尽快操作以确保名额。"
+        },
+        {
+          "question": "礼宾服务的票价是否固定不变？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "不是，价格根据淡旺季会有变动。"
+        },
+        {
+          "question": "如何获取礼宾服务的入园资格？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "在华特大剧院门口兑换礼宾服务，会获得一张红色的礼宾票，凭此票可免排队入园。"
+        },
+        {
+          "question": "如果只买单次尊享卡，价格是多少？它能享受哪些权益？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "单次尊享卡价格为180元，可享受免排队入园及花车巡游、烟花秀的预留位置。"
+        },
+        {
+          "question": "为什么说礼宾服务的性价比很高？",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "因为礼宾服务虽然价格较高，但能免除长时间排队、减少无效步行，并提供核心项目（如烟花）的优先观赏位，极大提升游玩体验，综合来看非常划算。"
+        },
+        {
+          "question": "礼宾服务提供的烟花预留位置具体在哪里？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "就在城堡前方。"
+        }
+      ]
+    },
+    {
+      "chunk_id": 9,
+      "source": "图片: 1-聚在一起说奇妙.jpg",
+      "type": "image",
+      "questions": [
+        {
+          "question": "这张上海迪士尼度假区的宣传海报中，有哪些迪士尼经典角色出现在画面里？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "米奇、米妮、唐老鸭、黛西、布鲁托、高飞、奇奇和蒂蒂等迪士尼经典角色出现在画面中。"
+        },
+        {
+          "question": "海报中的城堡在什么时间背景下显得金碧辉煌？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "城堡在夕阳的映照下显得金碧辉煌。"
+        },
+        {
+          "question": "为什么说这张海报营造出浓厚的节日氛围？请从视觉元素角度说明。",
+          "question_type": "推理问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "因为海报中使用了红色灯笼、绽放的烟花以及暖色调（如橙色、黄色、粉色）来渲染气氛，这些元素共同强化了节日喜庆的感觉。"
+        },
+        {
+          "question": "如果有人看到这张海报并想了解它是否与春节有关，你能根据内容给出依据吗？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "可以。海报中的红色灯笼和烟花元素暗示了可能是一个特别的节日活动，如春节或其他庆典，且主题强调团圆与喜庆，符合春节氛围特征。"
+        },
+        {
+          "question": "这张海报通过哪些方式传达‘家庭团聚’的主题？请结合人物与场景分析。",
+          "question_type": "对比问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "海报中真人家庭成员与迪士尼角色站在一起合影，表情自然融洽；背景是象征欢乐与庆祝的城堡与烟花，整体构图突出人与角色的互动，从而强化了家庭团聚、共享美好时光的主题。"
+        },
+        {
+          "question": "‘聚在一起说‘奇妙’’这句标语的英文翻译是什么？它在海报中的位置如何？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "英文翻译是“Together We Say 'Qi Miao'”，位于底部大艺术字下方。"
+        },
+        {
+          "question": "假设你是一位游客，看到这张海报后最可能产生什么情感反应？为什么？",
+          "question_type": "假设问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "最可能产生期待与喜悦的情感，因为海报以温暖明亮的色调、欢乐的家庭合影和璀璨的烟花展现迪士尼乐园的奇妙体验，激发人们对团圆与欢聚的向往。"
+        },
+        {
+          "question": "这张海报的主色调是什么？它们对整体氛围有何影响？",
+          "question_type": "间接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "主色调是橙色、黄色和粉色，营造出温馨、欢乐的氛围。"
+        },
+        {
+          "question": "为何说这张海报体现了‘中西融合’的设计理念？请举例说明。",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "部分迪士尼角色穿着传统中式服饰，而背景又为具有东方特色的灯笼和节日装饰，同时文字包含中文与英文双语表达，体现了文化融合的设计理念。"
+        },
+        {
+          "question": "如果将这张海报用于春节期间的宣传活动，它的哪些元素最为关键？",
+          "question_type": "条件问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "关键元素包括红色灯笼、烟花、中文标语‘聚在一起说‘奇妙’’以及家庭合影场景，这些都契合春节团圆、喜庆的主题。"
+        }
+      ]
+    },
+    {
+      "chunk_id": 10,
+      "source": "图片: 2-万圣节.jpeg",
+      "type": "image",
+      "questions": [
+        {
+          "question": "上海迪士尼度假区万圣节活动海报的主色调是什么？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "深蓝色和紫色"
+        },
+        {
+          "question": "海报中出现的三位反派角色分别是谁？",
+          "question_type": "直接问",
+          "difficulty": "简单",
+          "is_answerable": true,
+          "answer": "玛琳菲森、乌苏拉，以及另一位未明确名字但穿着深色服装的女性角色"
+        },
+        {
+          "question": "为什么说这张海报体现了万圣节的欢乐氛围？",
+          "question_type": "推理问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "因为海报使用了深蓝与紫色营造神秘感，搭配粉色、黄色和橙色灯光，加上烟花、骷髅元素和‘玩心大开’的标语，共同传达出节日的喜庆与趣味"
+        },
+        {
+          "question": "如果唐老鸭没有戴骷髅装饰，这张海报还能体现万圣节主题吗？",
+          "question_type": "假设问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "可能仍能体现万圣节主题，因为整体画面包含大量万圣节元素如城堡灯光、烟花、反派角色和标语，但缺少骷髅装饰会减弱角色的节日装扮特征"
+        },
+        {
+          "question": "对比分析玛琳菲森和乌苏拉在海报中的形象设计有何异同？",
+          "question_type": "对比问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "相同点：两者均为反派角色，均身穿华丽服饰并手持标志性道具（法杖/权杖），位于画面右侧；不同点：玛琳菲森为绿色面部、头戴尖角帽，风格更黑暗神秘；乌苏拉则穿红黑服装、戴高顶礼帽，更具戏剧性和张扬感"
+        },
+        {
+          "question": "这张海报中有哪些细节可以证明它属于上海迪士尼度假区的官方活动宣传？",
+          "question_type": "间接问",
+          "difficulty": "中等",
+          "is_answerable": true,
+          "answer": "左上角标有“SHANGHAI DISNEY RESORT”字样，中央标题为中文“万圣趴 玩心大开”，下方英文标语也指向上海迪士尼，且整体设计符合其品牌调性"
+        },
+        {
+          "question": "若将海报的主色调从深蓝紫改为明亮的黄色和红色，会对节日氛围产生什么影响？",
+          "question_type": "假设问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "会削弱万圣节夜晚的神秘感和奇幻氛围，使画面更偏向于温暖或庆典类活动，而失去原有的幽暗、惊悚又欢乐的万圣节特质"
+        },
+        {
+          "question": "为什么选择让唐老鸭出现在万圣节海报中，而不是其他经典角色？",
+          "question_type": "推理问",
+          "difficulty": "困难",
+          "is_answerable": true,
+          "answer": "因为唐老鸭虽非反派，但其调皮自信的形象与万圣节‘玩心大开’的主题契合，且头顶骷髅装饰增强了节日趣味性，有助于吸引家庭观众参与"
+        }
+      ]
+    }
+  ]
+}
