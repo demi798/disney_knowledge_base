@@ -3,8 +3,7 @@
 路径与模型配置模块。
 
 说明：
-- 本目录为disney_knowledge_base包根目录；原始 Word 与图片知识库位于上级
-  `disney_knowledge_base/`，通过 KNOWLEDGE_BASE_DIR 引用。
+- 本目录为disney_knowledge_base包根目录；原始 Word 与图片知识库位于文件夹`docs`，通过 KNOWLEDGE_BASE_DIR 引用。
 - 向量索引与运营产生的 JSON 默认落在本包下的 `data/`。
 - 修改模型名、切块参数后，通常需要重新运行 `build_index.py`（索引）或仅重启服务（仅改 CHAT_MODEL 等）。
 """
